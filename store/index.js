@@ -8,6 +8,7 @@ export const actions = {
     )
     .then(response => {
       console.log(response)
+      this.$router.push('/')
     })
   },
   login({ dispatch }, authData) {
@@ -16,7 +17,8 @@ export const actions = {
       authData.password,
     )
     .then(response => {
-    console.log(response)
+      console.log(response)
+      this.$router.push('/')
     })
   },
 }
