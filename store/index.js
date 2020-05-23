@@ -6,5 +6,17 @@ export const actions = {
       authData.email,
       authData.password,
     )
-  }
+    .then(response => {
+      console.log(response)
+    })
+  },
+  login({ dispatch }, authData) {
+    firebase.auth().signInWithEmailAndPassword(
+      authData.email,
+      authData.password,
+    )
+    .then(response => {
+    console.log(response)
+    })
+  },
 }
