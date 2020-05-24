@@ -67,8 +67,8 @@ export const actions = {
         todo: todo.todo,
         limit: todo.limit,
       })
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
+      .then(function (doc) {
+        console.log("Document written with ID: ", doc.id);
         commit('addTodo', todo)
     })
   }
