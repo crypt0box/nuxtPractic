@@ -18,6 +18,9 @@ export const mutations = {
   },
   addTodo(state, todo) {
     state.todos.push(todo)
+  },
+  clearTodo(state) {
+    state.todo = []
   }
 }
 
@@ -55,6 +58,18 @@ export const actions = {
           console.log('success : ' + `${doc.id} => ${doc.data()}`);
           commit('addTodo', doc.data())
       })
+    })
+  },
+  addTodo({ commit }, todo) {
+    console.log(todo)
+    todoRef
+      .add({
+        todo: todo.todo,
+        limit: todo.limit,
+      })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        commit('addTodo', todo)
     })
   }
 }
