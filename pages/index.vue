@@ -3,7 +3,7 @@
   home
   <p>userUid: {{ $store.getters.getUserUid }}</p>
   <p>userEmail: {{ $store.getters.getUserEmail }}</p>
-  <table class="table is-narrow">
+  <table>
     <tbody>
       <tr>
         <th>todo</th>
@@ -11,25 +11,15 @@
       </tr>
     </tbody>
     <tbody>
-      <tr v-for="todo in $store.getters.getTodos" :key="todo.todo">
-        <td>{{todo.todo}}</td>
-        <td>{{todo.limit}}</td>
+      <tr v-for="(todo, index) in $store.getters.getTodos" :key="`${index}`">
+        <td>{{ todo.todo }}</td>
+        <td>{{ todo.limit }}</td>
       </tr>
     </tbody>
   </table>
-  <div class="field is-grouped">
-    <p class="control is-expanded">
-      <input v-model="newTodo" class="input" type="text" placeholder="todo">
-    </p>
-    <p class="control is-expanded">
-      <input v-model="newLimit" class="input" type="text" placeholder="limit">
-    </p>
-    <p class="control">
-      <a class="button is-primary" @click="addTodo">
-        add
-      </a>
-    </p>
-  </div>
+      <v-text-field v-model="newTodo" class="input" type="text" placeholder="todo"></v-text-field>
+      <v-text-field v-model="newLimit" class="input" type="text" placeholder="limit"></v-text-field>
+      <v-btn @click="addTodo">add</v-btn>
 </div>
 </template>
 

@@ -20,7 +20,7 @@ export const mutations = {
     state.todos.push(todo)
   },
   clearTodo(state) {
-    state.todo = []
+    state.todos = []
   }
 }
 
@@ -51,6 +51,7 @@ export const actions = {
     )
   },
   fetchTodos({ commit }) {
+    commit('clearTodo')
     todoRef
       .get()
       .then(response => {
@@ -61,7 +62,6 @@ export const actions = {
     })
   },
   addTodo({ commit }, todo) {
-    console.log(todo)
     todoRef
       .add({
         todo: todo.todo,
