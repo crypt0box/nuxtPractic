@@ -17,9 +17,17 @@
       </tr>
     </tbody>
   </table>
-      <v-text-field v-model="newTodo" class="input" type="text" placeholder="todo"></v-text-field>
-      <v-text-field v-model="newLimit" class="input" type="text" placeholder="limit"></v-text-field>
+  <v-form>
+    <v-container>
+      <v-col cols="12" sm="6" md="3">
+        <v-text-field v-model="newTodo" placeholder="todo" outlined></v-text-field>
+      </v-col>
+      <v-col cols="12" sm="6" md="3">
+      <v-text-field v-model="newLimit" class="input" type="text" placeholder="limit" outlined></v-text-field>
+      </v-col>
       <v-btn @click="addTodo">add</v-btn>
+    </v-container>
+  </v-form>
 </div>
 </template>
 
