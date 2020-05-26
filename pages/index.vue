@@ -47,7 +47,7 @@ export default {
       this.$store.dispatch('addTodo', {todo, limit})
       this.newTodo = ''
       this.newLimit = ''
-    }
+    },
   },
   created() {
     this.$store.dispatch('fetchTodos')

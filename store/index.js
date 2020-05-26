@@ -71,7 +71,7 @@ export const actions = {
         console.log("Document written with ID: ", docRef.id);
         commit('addTodo', todo)
     })
-  }
+  },
 }
 
 export const getters = {
